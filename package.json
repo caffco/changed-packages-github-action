@@ -1,6 +1,6 @@
 {
   "name": "@caff/changed-packages-github-action",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha",
   "description": "A Github action to get the packages affected by your changesets",
   "main": "lib/index.js",
   "repository": "https://github.com/caffco/changed-packages-github-action",
