@@ -1,0 +1,27 @@
+name: 'Get Changed Packages'
+description: 'Returns changed packages and those listed in your changesets'
+author: 'Caff'
+branding:
+  icon: info
+  color: red
+inputs:
+  base_branch:
+    required: true
+    description: 'Name of the base branch from which changes will be computed. Defaults to `main`.'
+    default: 'main'
+  repository_path:
+    required: true
+    description: 'Relative or absolute path to the repository. Defaults to working directory.'
+    default: '.'
+outputs:
+  packages_affected_by_release_plan:
+    description: 'List of package names affected by the release plan defined by your changesets'
+  changed_packages:
+    description: 'List of package names that have changes since base branch, regardless appearing in your changesets or not'
+  changed_packages_without_changeset:
+    description: 'List of package names that have changes since base branch and do not appear in your changesets'
+  packages_versions_after_applying_release_plan:
+    description: 'Dictionary of package name -> version reflecting the result of applying the release plan defined by your changesets'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
