@@ -23,16 +23,19 @@ jobs:
         with:
           base_branch: main
           repository_path: .
-  run-tests:
-    - name: Run package-a tests
-      needs: get-changed-packages
-      if: ${{contains(needs.get-changed-packages.outputs.changedPackages, 'package-a')}}
-      run: yarn test-package-a
 
-    - name: Run package-b tests
-      needs: get-changed-packages
-      if: ${{contains(needs.get-changed-packages.outputs.changedPackages, 'package-b')}}
-      run: yarn test-package-b
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Run package-a tests
+        needs: get-changed-packages
+        if: ${{contains(needs.get-changed-packages.outputs.changed_packages, 'package-a')}}
+        run: yarn test-package-a
+
+        - name: Run package-b tests
+        needs: get-changed-packages
+        if: ${{contains(needs.get-changed-packages.outputs.changed_packages, 'package-b')}}
+        run: yarn test-package-b
 ```
 
 [changesetsurl]: https://github.com/atlassian/changesets
