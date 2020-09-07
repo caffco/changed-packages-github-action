@@ -1,4 +1,4 @@
-import {getInput, setOutput} from '@actions/core'
+import {getInput, setOutput, info} from '@actions/core'
 
 export function getOptionsFromGithubActionInput(): {
   repositoryRootPath: string
@@ -21,11 +21,30 @@ export function setGithubActionOutputFromResults({
   changedPackagesWithoutChangeset: string[]
   packagesVersionsAfterApplyingReleasePlan: Record<string, string>
 }): void {
+  info(
+    `Packages affected by release plan: ${packagesAffectedByReleasePlan.join()}`
+  )
   setOutput('packages_affected_by_release_plan', packagesAffectedByReleasePlan)
+
+  info(`Changed packages: ${changedPackages.join()}`)
   setOutput('changed_packages', changedPackages)
+
+  info(
+    `Changed packages without changeset: ${changedPackagesWithoutChangeset.join()}`
+  )
   setOutput(
     'changed_packages_without_changeset',
     changedPackagesWithoutChangeset
+  )
+
+  const packagesVersionsAfterApplyingReleasePlanList = Object.keys(
+    packagesVersionsAfterApplyingReleasePlan
+  ).map(
+    packageName =>
+      `${packageName}@${packagesVersionsAfterApplyingReleasePlan[packageName]}`
+  )
+  info(
+    `Packages versions after applying release plan: ${packagesVersionsAfterApplyingReleasePlanList.join()}`
   )
   setOutput(
     'packages_versions_after_applying_release_plan',

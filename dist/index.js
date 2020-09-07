@@ -87,9 +87,14 @@ function getOptionsFromGithubActionInput() {
 }
 exports.getOptionsFromGithubActionInput = getOptionsFromGithubActionInput;
 function setGithubActionOutputFromResults({ packagesAffectedByReleasePlan, changedPackages, changedPackagesWithoutChangeset, packagesVersionsAfterApplyingReleasePlan }) {
+    core_1.info(`Packages affected by release plan: ${packagesAffectedByReleasePlan.join()}`);
     core_1.setOutput('packages_affected_by_release_plan', packagesAffectedByReleasePlan);
+    core_1.info(`Changed packages: ${changedPackages.join()}`);
     core_1.setOutput('changed_packages', changedPackages);
+    core_1.info(`Changed packages without changeset: ${changedPackagesWithoutChangeset.join()}`);
     core_1.setOutput('changed_packages_without_changeset', changedPackagesWithoutChangeset);
+    const packagesVersionsAfterApplyingReleasePlanList = Object.keys(packagesVersionsAfterApplyingReleasePlan).map(packageName => `${packageName}@${packagesVersionsAfterApplyingReleasePlan[packageName]}`);
+    core_1.info(`Packages versions after applying release plan: ${packagesVersionsAfterApplyingReleasePlanList.join()}`);
     core_1.setOutput('packages_versions_after_applying_release_plan', packagesVersionsAfterApplyingReleasePlan);
 }
 exports.setGithubActionOutputFromResults = setGithubActionOutputFromResults;
