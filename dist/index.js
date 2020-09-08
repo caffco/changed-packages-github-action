@@ -93,6 +93,11 @@ function setGithubActionOutputFromResults({ packagesAffectedByReleasePlan, chang
     core_1.setOutput('changed_packages', changedPackages);
     core_1.info(`Changed packages without changeset: ${changedPackagesWithoutChangeset.join()}`);
     core_1.setOutput('changed_packages_without_changeset', changedPackagesWithoutChangeset);
+    const allChangedPackagesHaveChangeset = changedPackagesWithoutChangeset.length === 0;
+    if (!allChangedPackagesHaveChangeset) {
+        core_1.warning('There are changed packages without changeset');
+    }
+    core_1.setOutput('all_changed_packages_have_changeset', allChangedPackagesHaveChangeset);
     const packagesVersionsAfterApplyingReleasePlanList = Object.keys(packagesVersionsAfterApplyingReleasePlan).map(packageName => `${packageName}@${packagesVersionsAfterApplyingReleasePlan[packageName]}`);
     core_1.info(`Packages versions after applying release plan: ${packagesVersionsAfterApplyingReleasePlanList.join()}`);
     core_1.setOutput('packages_versions_after_applying_release_plan', packagesVersionsAfterApplyingReleasePlan);

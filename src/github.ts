@@ -1,4 +1,4 @@
-import {getInput, setOutput, info} from '@actions/core'
+import {getInput, setOutput, info, warning} from '@actions/core'
 
 export function getOptionsFromGithubActionInput(): {
   repositoryRootPath: string
@@ -35,6 +35,18 @@ export function setGithubActionOutputFromResults({
   setOutput(
     'changed_packages_without_changeset',
     changedPackagesWithoutChangeset
+  )
+
+  const allChangedPackagesHaveChangeset =
+    changedPackagesWithoutChangeset.length === 0
+
+  if (!allChangedPackagesHaveChangeset) {
+    warning('There are changed packages without changeset')
+  }
+
+  setOutput(
+    'all_changed_packages_have_changeset',
+    allChangedPackagesHaveChangeset
   )
 
   const packagesVersionsAfterApplyingReleasePlanList = Object.keys(
