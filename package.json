@@ -16,13 +16,14 @@
     "changesets"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "run-s tsc package",
+    "tsc": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
     "test": "jest",
-    "all": "run-s build format lint package test"
+    "all": "run-s format lint test build"
   },
   "husky": {
     "hooks": {
