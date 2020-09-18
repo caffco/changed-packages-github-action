@@ -33,7 +33,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.10.2",
     "@types/jest": "^26.0.14",
-    "@types/node": "^14.10.1",
+    "@types/node": "^14.11.1",
     "@typescript-eslint/parser": "^4.1.1",
     "@vercel/ncc": "^0.24.1",
     "eslint": "^7.9.0",
