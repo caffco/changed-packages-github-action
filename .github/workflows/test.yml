@@ -18,4 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Ensure main exists
+        if: ${{ !endsWith( github.ref, '/main' ) }}
+        run: git fetch origin main:main
       - uses: ./
