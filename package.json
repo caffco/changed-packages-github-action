@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.2.5",
-    "@changesets/get-release-plan": "^2.0.0",
+    "@changesets/get-release-plan": "^2.0.1",
     "@changesets/git": "^1.0.6",
     "@manypkg/get-packages": "^1.1.1"
   }
