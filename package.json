@@ -51,7 +51,7 @@
   "dependencies": {
     "@actions/core": "^1.5.0",
     "@changesets/get-release-plan": "^3.0.0",
-    "@changesets/git": "^1.0.6",
+    "@changesets/git": "^1.1.2",
     "@manypkg/get-packages": "^1.1.1"
   }
 }
