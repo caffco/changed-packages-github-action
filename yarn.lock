@@ -696,10 +696,10 @@
     resolve-from "^5.0.0"
     semver "^5.4.1"
 
-"@changesets/assemble-release-plan@^5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@changesets/assemble-release-plan/-/assemble-release-plan-5.1.2.tgz#63ed3a00f62b5af08a82e83801a252ac9726c625"
-  integrity sha512-nOFyDw4APSkY/vh5WNwGEtThPgEjVShp03PKVdId6wZTJALVcAALCSLmDRfeqjE2z9EsGJb7hZdDlziKlnqZgw==
+"@changesets/assemble-release-plan@^5.1.2", "@changesets/assemble-release-plan@^5.1.3":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@changesets/assemble-release-plan/-/assemble-release-plan-5.1.3.tgz#b415c5db64e5a30c53aed8c1adc5ab4c4aaad283"
+  integrity sha512-I+TTkUoqvxBEuDLoJfJYKDXIJ+nyiTbVJ8KGhpXEsLq4N/ms/AStSbouJwF2d/p3cB+RCPr5+gXh31GSN4kA7w==
   dependencies:
     "@babel/runtime" "^7.10.4"
     "@changesets/errors" "^0.1.4"
@@ -784,13 +784,13 @@
     fs-extra "^7.0.1"
     semver "^5.4.1"
 
-"@changesets/get-release-plan@^3.0.8":
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/@changesets/get-release-plan/-/get-release-plan-3.0.8.tgz#2ac7c4f7903aedede3d27af66311ad1db7937e5d"
-  integrity sha512-TJYiWNuP0Lzu2dL/KHuk75w7TkiE5HqoYirrXF7SJIxkhlgH9toQf2C7IapiFTObtuF1qDN8HJAX1CuIOwXldg==
+"@changesets/get-release-plan@^3.0.8", "@changesets/get-release-plan@^3.0.9":
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/@changesets/get-release-plan/-/get-release-plan-3.0.9.tgz#d445660f3679cb65e05e02adfbca037a25b45943"
+  integrity sha512-5C1r4DcOjVxcCvPmXpymeyT6mdSTLCNiB2L+5uf19BRkDKndJdIQorH5Fe2XBR2nHUcZQFT+2TXDzCepat969w==
   dependencies:
     "@babel/runtime" "^7.10.4"
-    "@changesets/assemble-release-plan" "^5.1.2"
+    "@changesets/assemble-release-plan" "^5.1.3"
     "@changesets/config" "^2.0.0"
     "@changesets/pre" "^1.0.11"
     "@changesets/read" "^0.5.5"
