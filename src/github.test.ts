@@ -13,10 +13,12 @@ describe('Github', () => {
     beforeEach(() => {
       jest.spyOn(core, 'getInput').mockImplementation(
         key =>
-          (({
-            repository_path: 'fake-repo-path',
-            base_branch: 'fake-base-branch'
-          } as Record<string, string>)[key])
+          ((
+            {
+              repository_path: 'fake-repo-path',
+              base_branch: 'fake-base-branch'
+            } as Record<string, string>
+          )[key])
       )
     })
 
@@ -73,11 +75,10 @@ describe('Github', () => {
         }
       })
 
-      expect(
-        core.setOutput
-      ).toHaveBeenCalledWith('packages_affected_by_release_plan', [
-        'package-affected-by-release-plan'
-      ])
+      expect(core.setOutput).toHaveBeenCalledWith(
+        'packages_affected_by_release_plan',
+        ['package-affected-by-release-plan']
+      )
     })
 
     it('should log changed packages', async () => {
@@ -207,11 +208,10 @@ describe('Github', () => {
         }
       })
 
-      expect(
-        core.setOutput
-      ).toHaveBeenCalledWith('changed_packages_without_changeset', [
-        'changed-package-without-release-plan'
-      ])
+      expect(core.setOutput).toHaveBeenCalledWith(
+        'changed_packages_without_changeset',
+        ['changed-package-without-release-plan']
+      )
     })
 
     it('should log packages versions after applying release plan', async () => {

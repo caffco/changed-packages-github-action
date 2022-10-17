@@ -22,16 +22,15 @@ export default async function main(): Promise<void> {
     singlePackage => singlePackage.packageJson.name
   )
 
-  const changedPackagesWithoutReleasePlan = await getChangedPackagesWithoutReleasePlan(
-    options
-  )
-  const changedPackagesWithoutChangesets = changedPackagesWithoutReleasePlan.map(
-    singlePackage => singlePackage.packageJson.name
-  )
+  const changedPackagesWithoutReleasePlan =
+    await getChangedPackagesWithoutReleasePlan(options)
+  const changedPackagesWithoutChangesets =
+    changedPackagesWithoutReleasePlan.map(
+      singlePackage => singlePackage.packageJson.name
+    )
 
-  const packagesVersionsAfterApplyingReleasePlan = await getChangesetVersionByPackageName(
-    options
-  )
+  const packagesVersionsAfterApplyingReleasePlan =
+    await getChangesetVersionByPackageName(options)
 
   const results = {
     packagesAffectedByReleasePlan,
