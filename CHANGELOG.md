@@ -3,6 +3,7 @@
 ## 0.0.2
 
 - Upgrade dependencies
+- Upgrade to Node 16
 
 ## 0.0.1
 
