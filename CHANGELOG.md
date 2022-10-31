@@ -1,5 +1,9 @@
 # @caff/changed-packages-github-action
 
+## 0.0.3
+
+- Add Github summary
+
 ## 0.0.2
 
 - Upgrade dependencies
