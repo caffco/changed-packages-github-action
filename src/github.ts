@@ -1,4 +1,4 @@
-import {getInput, setOutput, info, warning} from '@actions/core'
+import {getInput, setOutput, info, warning, summary} from '@actions/core'
 
 export function getOptionsFromGithubActionInput(): {
   repositoryRootPath: string
@@ -62,4 +62,28 @@ export function setGithubActionOutputFromResults({
     'packages_versions_after_applying_release_plan',
     packagesVersionsAfterApplyingReleasePlan
   )
+
+  const allPackages = new Set([
+    ...packagesAffectedByReleasePlan,
+    ...changedPackages
+  ])
+  summary.addHeading('Changed packages').addTable([
+    [
+      {
+        data: 'Package',
+        header: true
+      },
+      {
+        data: 'New version',
+        header: true
+      }
+    ],
+    ...Array.from(allPackages)
+      .sort((lhs, rhs) => (lhs < rhs ? -1 : lhs > rhs ? 1 : 0))
+      .map(packageName => [
+        packageName,
+        packagesVersionsAfterApplyingReleasePlan[packageName] ||
+          '❌ (No changeset)'
+      ])
+  ])
 }
