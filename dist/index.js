@@ -100,6 +100,32 @@ function setGithubActionOutputFromResults({ packagesAffectedByReleasePlan, chang
     const packagesVersionsAfterApplyingReleasePlanList = Object.keys(packagesVersionsAfterApplyingReleasePlan).map(packageName => `${packageName}@${packagesVersionsAfterApplyingReleasePlan[packageName]}`);
     (0, core_1.info)(`Packages versions after applying release plan: ${packagesVersionsAfterApplyingReleasePlanList.join()}`);
     (0, core_1.setOutput)('packages_versions_after_applying_release_plan', packagesVersionsAfterApplyingReleasePlan);
+    const allPackages = new Set([
+        ...packagesAffectedByReleasePlan,
+        ...changedPackages
+    ]);
+    core_1.summary
+        .addHeading('Changed packages')
+        .addTable([
+        [
+            {
+                data: 'Package',
+                header: true
+            },
+            {
+                data: 'New version',
+                header: true
+            }
+        ],
+        ...Array.from(allPackages)
+            .sort((lhs, rhs) => (lhs < rhs ? -1 : lhs > rhs ? 1 : 0))
+            .map(packageName => [
+            packageName,
+            packagesVersionsAfterApplyingReleasePlan[packageName] ||
+                '❌ (No changeset)'
+        ])
+    ])
+        .write();
 }
 exports.setGithubActionOutputFromResults = setGithubActionOutputFromResults;
 

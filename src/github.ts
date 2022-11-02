@@ -67,23 +67,26 @@ export function setGithubActionOutputFromResults({
     ...packagesAffectedByReleasePlan,
     ...changedPackages
   ])
-  summary.addHeading('Changed packages').addTable([
-    [
-      {
-        data: 'Package',
-        header: true
-      },
-      {
-        data: 'New version',
-        header: true
-      }
-    ],
-    ...Array.from(allPackages)
-      .sort((lhs, rhs) => (lhs < rhs ? -1 : lhs > rhs ? 1 : 0))
-      .map(packageName => [
-        packageName,
-        packagesVersionsAfterApplyingReleasePlan[packageName] ||
-          '❌ (No changeset)'
-      ])
-  ])
+  summary
+    .addHeading('Changed packages')
+    .addTable([
+      [
+        {
+          data: 'Package',
+          header: true
+        },
+        {
+          data: 'New version',
+          header: true
+        }
+      ],
+      ...Array.from(allPackages)
+        .sort((lhs, rhs) => (lhs < rhs ? -1 : lhs > rhs ? 1 : 0))
+        .map(packageName => [
+          packageName,
+          packagesVersionsAfterApplyingReleasePlan[packageName] ||
+            '❌ (No changeset)'
+        ])
+    ])
+    .write()
 }

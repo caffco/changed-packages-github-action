@@ -44,6 +44,9 @@ describe('Github', () => {
       jest.spyOn(core, 'setOutput').mockImplementation(() => {})
       jest.spyOn(core, 'info').mockImplementation(() => {})
       jest.spyOn(core, 'warning').mockImplementation(() => {})
+      jest.spyOn(core.summary, 'addHeading').mockReturnThis()
+      jest.spyOn(core.summary, 'addTable').mockReturnThis()
+      jest.spyOn(core.summary, 'write').mockReturnThis()
     })
 
     it('should log packages affected by release plan', async () => {
@@ -229,6 +232,25 @@ describe('Github', () => {
       expect(core.info).toHaveBeenCalledWith(
         'Packages versions after applying release plan: package-affected-by-release-plan@2.0.0'
       )
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      expect(core.summary.addHeading).toHaveBeenCalledWith('Changed packages')
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      expect(core.summary.addTable).toHaveBeenCalledWith([
+        [
+          {
+            data: 'Package',
+            header: true
+          },
+          {
+            data: 'New version',
+            header: true
+          }
+        ],
+        ['changed-package', '❌ (No changeset)'],
+        ['package-affected-by-release-plan', '2.0.0']
+      ])
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      expect(core.summary.write).toHaveBeenCalled()
     })
 
     it('should set `packagesVersionsAfterApplyingReleasePlan` output to proper value', () => {
