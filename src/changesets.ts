@@ -15,12 +15,12 @@ export async function getPackagesWithReleasePlan({
   )
   const allPackages = await getPackages(repositoryRootPath)
 
-  const packagesByName = allPackages.packages.reduce(
+  const packagesByName = allPackages.packages.reduce<Record<string, Package>>(
     (accum, singlePackage) => ({
       ...accum,
       [singlePackage.packageJson.name]: singlePackage
     }),
-    {} as Record<string, Package>
+    {}
   )
 
   const changedPackages = releasePlan.releases.map(
@@ -82,12 +82,14 @@ export async function getChangesetVersionByPackageName({
     repositoryBaseBranch
   )
 
-  const releasedVersionByPackageName = releasePlan.releases.reduce(
+  const releasedVersionByPackageName = releasePlan.releases.reduce<
+    Record<string, string>
+  >(
     (accum, singleRelease) => ({
       ...accum,
       [singleRelease.name]: singleRelease.newVersion
     }),
-    {} as Record<string, string>
+    {}
   )
 
   return releasedVersionByPackageName

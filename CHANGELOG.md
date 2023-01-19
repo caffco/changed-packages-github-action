@@ -1,5 +1,11 @@
 # @caff/changed-packages-github-action
 
+## 0.0.5
+
+### Patch Changes
+
+- 0406819: Upgrade dependencies
+
 ## 0.0.4
 
 - Write Github summary
