@@ -1,5 +1,11 @@
 # @caff/changed-packages-github-action
 
+## 0.0.6
+
+### Patch Changes
+
+- 664954e: Built action using `esbuild`
+
 ## 0.0.5
 
 ### Patch Changes
