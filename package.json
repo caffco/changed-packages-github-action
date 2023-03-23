@@ -25,7 +25,7 @@
     "all": "run-s format lint test build"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.0",
+    "@changesets/cli": "^2.26.1",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.11.9",
     "@typescript-eslint/parser": "^5.56.0",
