@@ -28,7 +28,7 @@
     "@changesets/cli": "^2.26.1",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.11.9",
-    "@typescript-eslint/parser": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.1",
     "esbuild": "^0.17.18",
     "eslint": "^8.39.0",
     "eslint-plugin-github": "^4.4.0",
