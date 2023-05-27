@@ -1,5 +1,11 @@
 # @caff/changed-packages-github-action
 
+## 0.0.7
+
+### Patch Changes
+
+- 063d06f: Build as CommonJS package
+
 ## 0.0.6
 
 ### Patch Changes

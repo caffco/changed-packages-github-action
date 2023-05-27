@@ -1,6 +1,6 @@
 {
   "name": "@caff/changed-packages-github-action",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A Github action to get the packages affected by your changesets",
   "main": "lib/index.js",
   "repository": "https://github.com/caffco/changed-packages-github-action",
@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "build": "yarn esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --minify --keep-names --format=esm --banner:js=\"import {createRequire} from 'module';const require=createRequire(import.meta.url);\"",
+    "build": "yarn esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --minify --keep-names --target=node16.0",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
@@ -25,6 +25,8 @@
     "all": "run-s format lint test build"
   },
   "devDependencies": {
+    "@action-validator/core": "^0.5.1",
+    "@action-validator/cli": "^0.5.1",
     "@changesets/cli": "^2.26.1",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.11.9",
