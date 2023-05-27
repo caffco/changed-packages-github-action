@@ -6,27 +6,27 @@ on:
       - main
 
 jobs:
-  build: # make sure build/ci work properly
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: |
           yarn --frozen-lockfile
       - run: |
           yarn all
-  test: # make sure the action works on a clean machine without building
+  unit-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Install git
         run: |
           sudo apt-get update 
           sudo apt-get install -y git
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Install dependencies
         run: yarn --frozen-lockfile
-      - name: Run tests
+      - name: Run unit tests
         run: yarn test
       - name: Upload coverage
         uses: caffco/code-climate-github-action@v0.0.1-alpha.5
@@ -37,3 +37,17 @@ jobs:
           collect_coverage: 'true'
           coverage_file_patterns: |
             coverage/lcov.info:lcov
+  integration-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install git
+        run: |
+          sudo apt-get update 
+          sudo apt-get install -y git
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Run integration tests
+        uses: ./
+        with:
+          base_branch: origin/main
