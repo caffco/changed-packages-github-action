@@ -1,5 +1,11 @@
 # @caff/changed-packages-github-action
 
+## 0.0.8
+
+### Patch Changes
+
+- be13465: Upgrade dependencies and port test suite to Vitest
+
 ## 0.0.7
 
 ### Patch Changes
