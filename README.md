@@ -18,11 +18,11 @@ jobs:
   get-changed-packages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Get changed packages
-        uses: caffco/changed-packages-github-action@v1.0.0
+        uses: caffco/changed-packages-github-action@v0.0.7
         with:
           base_branch: main
           repository_path: .
