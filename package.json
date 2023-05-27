@@ -25,6 +25,8 @@
     "all": "run-s format lint test build"
   },
   "devDependencies": {
+    "@action-validator/core": "^0.5.1",
+    "@action-validator/cli": "^0.5.1",
     "@changesets/cli": "^2.26.1",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.11.9",

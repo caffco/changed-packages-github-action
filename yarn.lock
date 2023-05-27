@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@action-validator/cli@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@action-validator/cli/-/cli-0.5.1.tgz#292e02787e7a9c742558a78090580f5aadeb9ae7"
+  integrity sha512-pK9YBxxLk7nBMsYEenA7/A1J6zYPhDHa6qAod9niwbUXy1PFJ4Xl1XLqbiceiW/SosMt38MFwY6AfxSV1cgtsw==
+  dependencies:
+    chalk "5.2.0"
+
+"@action-validator/core@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@action-validator/core/-/core-0.5.1.tgz#7189ffe50a6db7e73f4ca5274485396684b0e7f1"
+  integrity sha512-NFCME2vkFYXQAftJS+5V7jMfop2OZCmWBKX76WucQwccts+Qfyq8+Z/MC8d28S34k9aIDsN6Y2IUOJd9Ssu1Jg==
+
 "@actions/core@^1.10.0":
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.10.0.tgz#44551c3c71163949a2f06e94d9ca2157a0cfac4f"
