@@ -7,17 +7,17 @@
   resolved "https://registry.yarnpkg.com/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz#bd9154aec9983f77b3a034ecaa015c2e4201f6cf"
   integrity sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==
 
-"@action-validator/cli@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@action-validator/cli/-/cli-0.5.2.tgz#011e513f96df90ba5d1b97c30c581443eaa51857"
-  integrity sha512-oU9gGYtnXnGnNfCIQTvT7brEfq+yPhKk65toonUGw6bL3yNCP7x4ZTjMrtt36sQPnk3cz0gPSJLO87T49z06dA==
+"@action-validator/cli@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@action-validator/cli/-/cli-0.5.3.tgz#2d4fe473058f6ef17530b9bb5929f0eade4e8672"
+  integrity sha512-u/kv77ZC55PfAc9RQeP76xV1GysTisEJjO+b5TgCrBBcaKtGLt5Y7ki2GSdc7CDzncNc1oeoGcwaLMW6JSdQAw==
   dependencies:
     chalk "5.2.0"
 
-"@action-validator/core@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@action-validator/core/-/core-0.5.2.tgz#9f7fa51470615393c135710c2fa4f0d70ba10f89"
-  integrity sha512-kR81kFFj33ZvPaTcbcWCqRAKiFgLQX/ahXLiyoHzjOL6OFb2Uu8JUF0pMIubylBvPmrzD4maGEAeiCZl2cmsUw==
+"@action-validator/core@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@action-validator/core/-/core-0.5.3.tgz#493b850ef7a2801830069d78f60cbefe0697423f"
+  integrity sha512-0ABelaY7nmpvV5q0z8Vl1cDeq2OZ1HyNXjXS54fBadLaCssZLbDvTa7M2uUaNMcEWV+Xl48WWbnqJWKePt9qHQ==
 
 "@actions/core@^1.10.0":
   version "1.10.0"
