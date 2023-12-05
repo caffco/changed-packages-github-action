@@ -21,6 +21,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Create local copy of main branch
+        run: git fetch origin main:main
       - name: Get changed packages
         uses: caffco/changed-packages-github-action@v0.0.7
         with:
