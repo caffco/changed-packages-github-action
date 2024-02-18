@@ -25,5 +25,5 @@ outputs:
   all_changed_packages_have_changeset:
     description: 'Boolean flag telling whether all changed packages appear in at least one changeset (`true`) or not'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
