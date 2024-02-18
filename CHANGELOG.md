@@ -1,5 +1,12 @@
 # @caff/changed-packages-github-action
 
+## 0.0.9
+
+### Patch Changes
+
+- Upgrade dependencies
+- Use Node 20 runtime
+
 ## 0.0.8
 
 ### Patch Changes
