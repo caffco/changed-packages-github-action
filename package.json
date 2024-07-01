@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "build": "yarn esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --minify --keep-names --target=node20.0",
+    "build": "yarn esbuild --bundle --outfile=dist/index.js --platform=node --packages=bundle --minify --keep-names --target=node20.0 src/index.ts",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
