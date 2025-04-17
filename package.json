@@ -30,7 +30,7 @@
     "@actions/core": "^1.11.1",
     "@changesets/cli": "^2.29.1",
     "@changesets/get-release-plan": "^4.0.9",
-    "@changesets/git": "^3.0.3",
+    "@changesets/git": "^3.0.4",
     "@manypkg/get-packages": "^1.1.3",
     "@types/node": "^18.11.9",
     "@typescript-eslint/parser": "^8.30.1",
