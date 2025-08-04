@@ -1,4 +1,4 @@
 {
-  "*.(ts|js)": ["biome check --write", "biome format --write"],
+  "src/**/*.(ts|js)": ["biome check --write", "biome format --write"],
   ".github/workflows/*.(yaml|yml)": ["action-validator"]
 }
