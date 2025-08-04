@@ -1,10 +1,10 @@
-import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import {
-  getPackagesWithReleasePlan,
   getChangedPackages,
   getChangedPackagesWithoutReleasePlan,
-  getChangesetVersionByPackageName
+  getChangesetVersionByPackageName,
+  getPackagesWithReleasePlan
 } from './changesets'
 import {
   getOptionsFromGithubActionInput,

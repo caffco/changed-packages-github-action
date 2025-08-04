@@ -1,6 +1,5 @@
-import {beforeEach, describe, expect, it, vi} from 'vitest'
-
-import {getInput, setOutput, info, warning, summary} from '@actions/core'
+import { getInput, info, setOutput, summary, warning } from '@actions/core'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   getOptionsFromGithubActionInput,
   setGithubActionOutputFromResults
@@ -21,13 +20,13 @@ vi.mock('@actions/core', () => ({
 describe('#getOptionsFromGithubActionInput', () => {
   beforeEach(() => {
     vi.mocked(getInput).mockImplementation(
-      key =>
-        ((
-          {
+      (key) =>
+        (
+          ({
             repository_path: 'fake-repo-path',
             base_branch: 'fake-base-branch'
-          } as Record<string, string>
-        )[key])
+          }) as Record<string, string>
+        )[key]
     )
   })
 

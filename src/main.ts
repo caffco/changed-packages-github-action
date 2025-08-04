@@ -1,13 +1,13 @@
 import {
+  getChangedPackages,
+  getChangedPackagesWithoutReleasePlan,
+  getChangesetVersionByPackageName,
+  getPackagesWithReleasePlan
+} from './changesets'
+import {
   getOptionsFromGithubActionInput,
   setGithubActionOutputFromResults
 } from './github'
-import {
-  getPackagesWithReleasePlan,
-  getChangedPackages,
-  getChangedPackagesWithoutReleasePlan,
-  getChangesetVersionByPackageName
-} from './changesets'
 
 export default async function main(): Promise<void> {
   const options = getOptionsFromGithubActionInput()
@@ -15,18 +15,18 @@ export default async function main(): Promise<void> {
   const packagesWithReleasePlan = await getPackagesWithReleasePlan(options)
 
   const packagesAffectedByReleasePlan = packagesWithReleasePlan.map(
-    singlePackage => singlePackage.packageJson.name
+    (singlePackage) => singlePackage.packageJson.name
   )
   const changedPackages = await getChangedPackages(options)
   const changedPackagesNames = changedPackages.map(
-    singlePackage => singlePackage.packageJson.name
+    (singlePackage) => singlePackage.packageJson.name
   )
 
   const changedPackagesWithoutReleasePlan =
     await getChangedPackagesWithoutReleasePlan(options)
   const changedPackagesWithoutChangesets =
     changedPackagesWithoutReleasePlan.map(
-      singlePackage => singlePackage.packageJson.name
+      (singlePackage) => singlePackage.packageJson.name
     )
 
   const packagesVersionsAfterApplyingReleasePlan =

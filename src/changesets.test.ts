@@ -1,14 +1,13 @@
-import {describe, expect, it, vi} from 'vitest'
-
-import {getPackages, Package} from '@manypkg/get-packages'
-import {getChangedPackagesSinceRef} from '@changesets/git'
 import getReleasePlan from '@changesets/get-release-plan'
+import { getChangedPackagesSinceRef } from '@changesets/git'
+import { getPackages, type Package } from '@manypkg/get-packages'
+import { describe, expect, it, vi } from 'vitest'
 
 import {
-  getPackagesWithReleasePlan,
+  getChangedPackages,
   getChangedPackagesWithoutReleasePlan,
   getChangesetVersionByPackageName,
-  getChangedPackages
+  getPackagesWithReleasePlan
 } from './changesets'
 
 const rootPackage = {

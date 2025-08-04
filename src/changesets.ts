@@ -1,6 +1,6 @@
-import {Package, getPackages} from '@manypkg/get-packages'
-import {getChangedPackagesSinceRef} from '@changesets/git'
 import getReleasePlan from '@changesets/get-release-plan'
+import { getChangedPackagesSinceRef } from '@changesets/git'
+import { getPackages, type Package } from '@manypkg/get-packages'
 
 export async function getPackagesWithReleasePlan({
   repositoryRootPath,
@@ -15,16 +15,13 @@ export async function getPackagesWithReleasePlan({
   )
   const allPackages = await getPackages(repositoryRootPath)
 
-  const packagesByName = allPackages.packages.reduce<Record<string, Package>>(
-    (accum, singlePackage) => ({
-      ...accum,
-      [singlePackage.packageJson.name]: singlePackage
-    }),
-    {}
-  )
+  const packagesByName: Record<string, Package> = {}
+  for (const singlePackage of allPackages.packages) {
+    packagesByName[singlePackage.packageJson.name] = singlePackage
+  }
 
   const changedPackages = releasePlan.releases.map(
-    release => packagesByName[release.name]
+    (release) => packagesByName[release.name]
   )
 
   return changedPackages
@@ -59,11 +56,11 @@ export async function getChangedPackagesWithoutReleasePlan({
     repositoryBaseBranch
   })
   const packagesWithReleasePlanNames = packagesWithReleasePlan.map(
-    singlePackage => singlePackage.packageJson.name
+    (singlePackage) => singlePackage.packageJson.name
   )
 
   const changedPackagesWithoutReleasePlan = changedPackages.filter(
-    singlePackage =>
+    (singlePackage) =>
       !packagesWithReleasePlanNames.includes(singlePackage.packageJson.name)
   )
 
@@ -82,15 +79,10 @@ export async function getChangesetVersionByPackageName({
     repositoryBaseBranch
   )
 
-  const releasedVersionByPackageName = releasePlan.releases.reduce<
-    Record<string, string>
-  >(
-    (accum, singleRelease) => ({
-      ...accum,
-      [singleRelease.name]: singleRelease.newVersion
-    }),
-    {}
-  )
+  const releasedVersionByPackageName: Record<string, string> = {}
+  for (const singleRelease of releasePlan.releases) {
+    releasedVersionByPackageName[singleRelease.name] = singleRelease.newVersion
+  }
 
   return releasedVersionByPackageName
 }

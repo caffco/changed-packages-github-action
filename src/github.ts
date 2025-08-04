@@ -1,4 +1,4 @@
-import {getInput, setOutput, info, warning, summary} from '@actions/core'
+import { getInput, info, setOutput, summary, warning } from '@actions/core'
 
 export function getOptionsFromGithubActionInput(): {
   repositoryRootPath: string
@@ -52,7 +52,7 @@ export function setGithubActionOutputFromResults({
   const packagesVersionsAfterApplyingReleasePlanList = Object.keys(
     packagesVersionsAfterApplyingReleasePlan
   ).map(
-    packageName =>
+    (packageName) =>
       `${packageName}@${packagesVersionsAfterApplyingReleasePlan[packageName]}`
   )
   info(
@@ -82,7 +82,7 @@ export function setGithubActionOutputFromResults({
       ],
       ...Array.from(allPackages)
         .sort((lhs, rhs) => (lhs < rhs ? -1 : lhs > rhs ? 1 : 0))
-        .map(packageName => [
+        .map((packageName) => [
           packageName,
           packagesVersionsAfterApplyingReleasePlan[packageName] ||
             '❌ (No changeset)'
