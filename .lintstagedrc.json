@@ -1,5 +1,5 @@
 {
-  "*.(ts|js)": ["eslint"],
-  "*.(ts|json|yml|js|md)": ["prettier --write"],
+  "*.(ts|js)": ["biome check --write"],
+  "*.(ts|json|yml|js|md)": ["biome format --write"],
   ".github/workflows/*.(yaml|yml)": ["action-validator"]
 }
