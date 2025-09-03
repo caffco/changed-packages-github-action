@@ -1,5 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/c41c2f4e4fc8b15a0063/maintainability)](https://codeclimate.com/github/caffco/changed-packages-github-action/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/c41c2f4e4fc8b15a0063/test_coverage)](https://codeclimate.com/github/caffco/changed-packages-github-action/test_coverage)
+[![codecov](https://codecov.io/gh/caffco/changed-packages-github-action/graph/badge.svg?token=QN7CHE2UO7)](https://codecov.io/gh/caffco/changed-packages-github-action)
 
 # Changed Packages
 
