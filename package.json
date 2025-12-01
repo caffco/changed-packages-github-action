@@ -28,7 +28,7 @@
     "@action-validator/core": "^0.6.0",
     "@actions/core": "^1.11.1",
     "@biomejs/biome": "^2.3.7",
-    "@changesets/cli": "^2.29.7",
+    "@changesets/cli": "^2.29.8",
     "@changesets/get-release-plan": "^4.0.12",
     "@changesets/git": "^3.0.4",
     "@manypkg/get-packages": "^3.1.0",
