@@ -16,7 +16,7 @@
     "changesets"
   ],
   "scripts": {
-    "build": "yarn esbuild --bundle --outfile=dist/index.js --platform=node --packages=bundle --minify --keep-names --target=node20.0 src/index.ts",
+    "build": "yarn esbuild --bundle --outfile=dist/index.js --platform=node --packages=bundle --minify --keep-names --target=node20.0 \"--banner:js=const __import_meta_url = require('url').pathToFileURL(__filename).href;\" --define:import.meta.url=__import_meta_url src/index.ts",
     "format": "biome format --write src/",
     "format-check": "biome format --write src/",
     "lint": "biome lint src/",
