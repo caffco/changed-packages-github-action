@@ -33,7 +33,7 @@
     "@changesets/git": "^4.0.0",
     "@manypkg/get-packages": "^3.1.0",
     "@types/node": "^26.0.0",
-    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/coverage-v8": "^4.1.11",
     "esbuild": "^0.28.2",
     "husky": "^9.1.7",
     "lint-staged": "^17.3.0",
