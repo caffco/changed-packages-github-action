@@ -213,7 +213,7 @@ __metadata:
     "@actions/core": "npm:^3.0.1"
     "@biomejs/biome": "npm:^2.5.14"
     "@changesets/cli": "npm:^3.0.2"
-    "@changesets/get-release-plan": "npm:^5.0.1"
+    "@changesets/get-release-plan": "npm:^5.0.2"
     "@changesets/git": "npm:^4.0.1"
     "@manypkg/get-packages": "npm:^3.1.0"
     "@types/node": "npm:^26.0.0"
@@ -310,6 +310,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@changesets/config@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@changesets/config@npm:4.0.1"
+  dependencies:
+    "@changesets/get-dependents-graph": "npm:^3.0.0"
+    "@changesets/should-skip-package": "npm:^1.0.0"
+    "@changesets/types": "npm:^7.0.0"
+    "@manypkg/get-packages": "npm:^3.1.0"
+    picomatch: "npm:^4.0.7"
+  checksum: 10c0/959dbbb3ab9fab0427a8990cbe7d4465d9b67042c96108209c8110b7c5ccb2fc3303b75d5c024e911d3a51ca082d13d49a5091edf52014a2b8d69e89b58188ed
+  languageName: node
+  linkType: hard
+
 "@changesets/errors@npm:^1.0.0":
   version: 1.0.0
   resolution: "@changesets/errors@npm:1.0.0"
@@ -337,17 +350,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/get-release-plan@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "@changesets/get-release-plan@npm:5.0.1"
+"@changesets/get-release-plan@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@changesets/get-release-plan@npm:5.0.2"
   dependencies:
     "@changesets/assemble-release-plan": "npm:^7.0.0"
-    "@changesets/config": "npm:^4.0.0"
+    "@changesets/config": "npm:^4.0.1"
     "@changesets/pre": "npm:^3.0.0"
     "@changesets/read": "npm:^1.0.1"
     "@changesets/types": "npm:^7.0.0"
     "@manypkg/get-packages": "npm:^3.1.0"
-  checksum: 10c0/3b9663e9c9ab699071903542d2e57a71c1621237c507c52ead37ec093f0b8930e0b85ced5a0899485154aae88345d16b1566cfe13ea57c8c6693485bf68eec94
+  checksum: 10c0/1c79db0a5630b2b71cd27ecd1b410c9670eb256c9345d0636cc1d1727ce2ace1e7200055d27fa4bc0656f98561b6df195a238cd6d98fb7408d967422b52b37b3
   languageName: node
   linkType: hard
 
